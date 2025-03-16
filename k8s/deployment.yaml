@@ -1,5 +1,5 @@
-apiVersion: apps/v1
-kind: Deployment
+Version: apps/v1
+kind: StatefulSet
 metadata:
   name: boardgame-deployment
 spec:
@@ -17,8 +17,3 @@ spec:
         image: prakashvntt/boardgame:latest
         ports:
         - containerPort: 8080
-<<<<<<< HEAD
-      imagePullSecrets:
-      - name: secrets
-=======
->>>>>>> 61956e8ef8c762270492f6c0fe3b411d02af3e5f
