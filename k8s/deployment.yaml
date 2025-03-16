@@ -17,5 +17,5 @@ spec:
         image: prakashvntt/board_game:latest
         ports:
         - containerPort: 8080
-       imagePullSecrets:
-        - name: secrets
+      imagePullSecrets:
+      - name: secrets
