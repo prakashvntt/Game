@@ -1,9 +1,9 @@
 apiVersion: apps/v1
-kind: StatefulSet
+kind: Deployment
 metadata:
   name: boardgame-deployment
 spec:
-  replicas: 3
+  replicas: 4  
   selector:
     matchLabels:
       app: boardgame
@@ -14,8 +14,11 @@ spec:
     spec:
       containers:
       - name: boardgame
-        image: prakashvntt/board_game:latest
+        image: prakashvntt/boardgame:latest
         ports:
         - containerPort: 8080
+<<<<<<< HEAD
       imagePullSecrets:
       - name: secrets
+=======
+>>>>>>> 61956e8ef8c762270492f6c0fe3b411d02af3e5f
