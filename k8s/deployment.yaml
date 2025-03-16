@@ -1,22 +1,19 @@
-piVersion: apps/v1
-kind: Deployment # Kubernetes resource kind we are creating
+apiVersion: apps/v1
+kind: Deployment
 metadata:
   name: boardgame-deployment
 spec:
+  replicas: 1  
   selector:
     matchLabels:
       app: boardgame
-  replicas: 2 # Number of replicas that will be created for this deployment
   template:
     metadata:
       labels:
         app: boardgame
     spec:
       containers:
-        - name: boardgame
-          image: adijaiswal/boardshack:latest # Image that will be used to containers in the cluster
-          imagePullPolicy: Always
-          ports:
-            - containerPort: 8080 # The port that the container is running on in the cluster
-       imagePullSecrets:
-        - name: secrets
+      - name: boardgame
+        image: prakashvntt/boardgame:latest
+        ports:
+        - containerPort: 8080
